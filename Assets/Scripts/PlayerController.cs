@@ -9,14 +9,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Collider _weaponCollider;
 
     private Vector2 moveInput;
+    private bool _isPlayerWalking;
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (!_isPlayerWalking)
+        {
+            _isPlayerWalking = true;
+            _animator.SetBool(Constants.playerWalk, _isPlayerWalking);
+        }
         moveInput = context.ReadValue<Vector2>();
     }
 
     public void OnAttackClick(InputAction.CallbackContext context)
     {
+        _isPlayerWalking = false;
+        _animator.SetBool(Constants.playerWalk, _isPlayerWalking);
         _animator.SetTrigger(Constants.attackAnim);
     }
     void Update()
