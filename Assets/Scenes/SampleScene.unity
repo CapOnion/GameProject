@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c71fc89b292c8d40b7b5b7d16b782e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 1860947485532619792, guid: 178ad548b25c1c145b289ea1e77885af, type: 3}
+  _enemyPrefab: {fileID: 3814219419785742691, guid: f67883474b6b05b4fa3d85ad17cdf7aa, type: 3}
   _poolSize: 10
 --- !u!4 &868973492
 Transform:
