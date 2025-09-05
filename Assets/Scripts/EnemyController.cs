@@ -19,18 +19,22 @@ public class EnemyController : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
+    {
+        SetParams();
+    }
+
+    private void OnEnable()
+    {
+        SetParams();
+    }
+
+    private void SetParams()
     {
         _currentHealth = _maxHealth;
         _targetPoints = TargetPoints.Instance.GetPoints();
         _currentPoint = _targetPoints[Random.Range(0, _targetPoints.Length)];
         _enemyAgent.SetDestination(_currentPoint.position);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void Die()
